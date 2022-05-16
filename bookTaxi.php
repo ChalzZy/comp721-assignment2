@@ -9,5 +9,14 @@
     $date = $_POST['date'];
     $time = $_POST['time'];
 
+	require_once('../../conf/booking.php');
+
+	// database connection
+	$conn = mysqli_connect($sql_host,
+	$sql_user,
+	$sql_pass,
+	$sql_db
+	);
+
     echo "<alert>test</alert>";
 ?>

@@ -15,7 +15,9 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script src="booking.js"></script>
+    <script type="text/javascript" src="booking.js"></script>
+    <script type="text/javascript" src="xhr.js"></script>
+
     <title>Document</title>
   </head>
   <body>
@@ -27,6 +29,7 @@
             type="text"
             class="form-control"
             name="cname"
+            id="cname"
             placeholder="Enter first name"
             required
           />
@@ -37,16 +40,18 @@
             type="text"
             class="form-control"
             name="phone"
+            id="phone"
             placeholder="Enter phone"
             required
           />
         </div>
         <div class="form-group">
-          <label for="snumber">Unit Number</label>
+          <label for="unumber">Unit Number</label>
           <input
             type="text"
             class="form-control"
-            name="snumber"
+            name="unumber"
+            id="unumber"
             placeholder="Enter Unit Number"
           />
         </div>
@@ -56,6 +61,7 @@
             type="text"
             class="form-control"
             name="snumber"
+            id="snumber"
             placeholder="Enter Street Number"
             required
           />
@@ -65,26 +71,38 @@
           <input
             type="text"
             class="form-control"
-            name="stnumber"
+            name="stname"
+            id="stname"
             placeholder="Enter Street Name"
             requied
           />
         </div>
         <div class="form-group">
-          <label for="dsbname">Suburb</label>
+          <label for="sbname">Suburb</label>
           <input
             type="text"
             class="form-control"
-            name="dsbname"
+            name="sbname"
+            id="sbname"
             placeholder="Enter Suburb"
           />
         </div>
         <div class="form-group">
-          <label for="dsbname">Pick-Up Date</label>
+          <label for="dsbname">Destination Suburb</label>
+          <input
+            type="text"
+            class="form-control"
+            name="dsbname"
+            id="dsbname"
+            placeholder="Enter Destination Suburb"
+          />
+        </div>
+        <div class="form-group">
+          <label for="date">Pick-Up Date</label>
           <input type="date" id="date" class="form-control" required />
         </div>
         <div class="form-group">
-          <label for="dsbname">Pick-Up Time</label>
+          <label for="time">Pick-Up Time</label>
           <input
             type="time"
             id="time"
@@ -93,8 +111,11 @@
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" onClick="getData()">
+          Submit
+        </button>
       </form>
+      <div id="test"></div>
     </div>
   </body>
 </html>

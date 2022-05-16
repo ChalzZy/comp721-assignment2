@@ -15,14 +15,11 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="booking.js"></script>
-    <script type="text/javascript" src="xhr.js"></script>
-
     <title>Document</title>
   </head>
   <body>
     <div class="p-5">
-      <form>
+      <form id="bookingForm">
         <div class="form-group">
           <label for="cname">First Name</label>
           <input
@@ -111,11 +108,12 @@
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary" onClick="getData()">
-          Submit
-        </button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
       <div id="test"></div>
     </div>
   </body>
 </html>
+
+<script type="text/javascript" src="booking.js"></script>
+<script type="text/javascript" src="xhr.js"></script>

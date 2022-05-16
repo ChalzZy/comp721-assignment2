@@ -8,7 +8,10 @@ window.onload = function () {
     ("0" + date.getMinutes()).slice(-2);
 };
 
-function getData() {
+let form = document.getElementById("bookingForm");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
   const cname = document.getElementById("cname").value;
   const phone = document.getElementById("phone").value;
   const unumber = document.getElementById("unumber").value;
@@ -22,14 +25,15 @@ function getData() {
   const xhr = createRequest();
   if (xhr) {
     var obj = document.getElementById("test");
-    const requestbody = `cname=${cname}&phone=${phone}&unumber=${unumber}&snumber=${snumber}&stname=${stname}&sbname=${sbname}&dsbname=${dsbname}&date=${date}&time=${time}`;
-    xhr.open("POST", "./bookTaxi.php", true);
+    xhr.open("POST", "./bookTaxi.php");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    const requestbody = `cname=${cname}&phone=${phone}&unumber=${unumber}&snumber=${snumber}&stname=${stname}&sbname=${sbname}&dsbname=${dsbname}&date=${date}&time=${time}`;
     xhr.onreadystatechange = function () {
+      alert(xhr.readyState); // to let us see the state of the computation
       if (xhr.readyState == 4 && xhr.status == 200) {
         obj.innerHTML = xhr.responseText;
       } // end if
     }; // end anonymous call-back function
     xhr.send(requestbody);
   } // end if
-} // end function getData()
+});

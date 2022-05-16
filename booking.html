@@ -1,46 +1,100 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="booking.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="p-5">
-        <form>
-            <div class="form-group">
-              <label for="cname">First Name</label>
-              <input type="text" class="form-control" name="cname" placeholder="Enter first name">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="text" class="form-control" name="phone" placeholder="Enter phone">
-            </div>
-            <div class="form-group">
-                <label for="snumber">Street Number</label>
-                <input type="text" class="form-control" name="snumber" placeholder="Enter Street Number">
-            </div>
-            <div class="form-group">
-                <label for="stname">Street Name</label>
-                <input type="text" class="form-control" name="stnumber" placeholder="Enter Street Name">
-            </div>
-            <div class="form-group">
-                <label for="dsbname">Suburb</label>
-                <input type="text" class="form-control" name="dsbname" placeholder="Enter Suburb">
-            </div>
-            <div class="form-group">
-                <label for="dsbname">Pick-Up Date</label>
-                <input type="date" class="form-control" name="date" placeholder="Enter Pick-up Date">
-            </div>
-            <div class="form-group">
-                <label for="dsbname">Pick-Up Time</label>
-                <input type="time" class="form-control" name="time" placeholder="Enter Pick-up Time">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+      <form>
+        <div class="form-group">
+          <label for="cname">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cname"
+            placeholder="Enter first name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            name="phone"
+            placeholder="Enter phone"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="snumber">Unit Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="snumber"
+            placeholder="Enter Unit Number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="snumber">Street Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="snumber"
+            placeholder="Enter Street Number"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="stname">Street Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="stnumber"
+            placeholder="Enter Street Name"
+            requied
+          />
+        </div>
+        <div class="form-group">
+          <label for="dsbname">Suburb</label>
+          <input
+            type="text"
+            class="form-control"
+            name="dsbname"
+            placeholder="Enter Suburb"
+          />
+        </div>
+        <div class="form-group">
+          <label for="dsbname">Pick-Up Date</label>
+          <input type="date" id="date" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="dsbname">Pick-Up Time</label>
+          <input
+            type="time"
+            id="time"
+            class="form-control"
+            name="time"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
-
-</body>
+  </body>
 </html>

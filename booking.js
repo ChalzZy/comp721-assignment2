@@ -24,12 +24,12 @@ form.addEventListener("submit", (event) => {
 
   const xhr = createRequest();
   if (xhr) {
-    var obj = document.getElementById("test");
+    var obj = document.getElementById("confirmation");
     xhr.open("POST", "./bookTaxi.php");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     const requestbody = `cname=${cname}&phone=${phone}&unumber=${unumber}&snumber=${snumber}&stname=${stname}&sbname=${sbname}&dsbname=${dsbname}&date=${date}&time=${time}`;
     xhr.onreadystatechange = function () {
-      alert(xhr.readyState); // to let us see the state of the computation
+      // alert(xhr.readyState); // to let us see the state of the computation
       if (xhr.readyState == 4 && xhr.status == 200) {
         obj.innerHTML = xhr.responseText;
       } // end if

@@ -18,9 +18,24 @@
 	$sql_db
 	);
 
-    //INSERT INTO `booking`(`ref`, `cname`, `phone`, `unumber`, `snumber`, `stname`, `sbname`, `dsbname`, `date`, `time`, `status`) VALUES ('BRN00000','Test Name','123456789','24','15','test street','test suburb','test dest suburb','17/05/2022','22:04', false)
-    $sql = "INSERT INTO `booking`(`ref`, `cname`, `phone`, `unumber`, `snumber`, `stname`, `sbname`, `dsbname`, `date`, `time`, `status`) VALUES ('1','".$cname."','".$phone."','".$unumber."','".$snumber."','".$stname."','".$sbname."','".$dsbname."','".$date."','".$time."', false)";
+    $ref = "SELECT ref FROM `booking` ORDER BY id DESC LIMIT 1"; 
+    $refResult = $conn->query($ref);
+    $bookingReference = 99999;
+    if ($refResult->num_rows > 0) {
+        while($row = $refResult->fetch_assoc()) {
+            $num = preg_replace('[\D]', '', $row['ref']);
+            $bookingReference = "BRN" . sprintf('%05d', ++$num);
+        }
+    } else {
+        $bookingReference = "BRN00001";
+    }
+
+    $sql = "INSERT INTO `booking`(`ref`, `cname`, `phone`, `unumber`, `snumber`, `stname`, `sbname`, `dsbname`, `date`, `time`, `status`) VALUES ('".$bookingReference."','".$cname."','".$phone."','".$unumber."','".$snumber."','".$stname."','".$sbname."','".$dsbname."','".$date."','".$time."', false)";
     $result = $conn->query($sql);
-    
-    echo "<alert>test</alert>";
+    echo "  <div class=\"alert alert-success\" role=\"alert\">
+                <h3><b>Thank you for your booking!</b></h3>
+                <p>Booking Reference Number: ".$bookingReference."</p>
+                <p>Pickup time: ".$time."</p>
+                <p>Pickup Date: ".$date."</p>
+            </div>"
 ?>

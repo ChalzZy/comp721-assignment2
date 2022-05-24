@@ -1,4 +1,10 @@
 <?php
+    //----------------
+    // Charles Monaghan 18012390
+    // Retrieves admin.html data from admin.js POST request.
+    // Retrieves data and formats the output
+    // Echo's back HTML
+    //----------------
     $bsearch = $_POST['bsearch'];
     $date = $_POST['date'];
     $time = $_POST['time'];
@@ -12,6 +18,7 @@
 	$sql_db
 	);
 
+    // formatting the data into a table
     if (strlen($bsearch) > 0) {
         $query = "SELECT * FROM `booking` where ref = '$bsearch'";
         $queryResult = $conn->query($query);
@@ -35,7 +42,7 @@
             }
             echo $output;
     } elseif ($bsearch == "empty") {
-        $query = "SELECT * FROM `booking` WHERE `time` <= CURRENT_TIME + INTERVAL 2 HOUR AND `time` >= CURRENT_TIME AND `date` = CURRENT_DATE AND `status` = 0";
+        $query = "SELECT * FROM `booking` WHERE `time` <= CURRENT_TIME() + INTERVAL 2 HOUR AND `date` = CURRENT_DATE() AND `status` = 0";
         $queryResult = $conn->query($query);
         $output = "";
         if ($queryResult->num_rows> 0 ) {

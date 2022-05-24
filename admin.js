@@ -1,6 +1,11 @@
+/**
+ * Charles Monaghan 18012390
+ * Gets admin input from admin.html and creates a POST request to getBookings.php
+ */
 let form = document.getElementById('form');
 
 form.addEventListener('submit', (event) => {
+  // gets current date and time
   const date = new Date();
   const time =
     ('0' + date.getHours()).slice(-2) +
@@ -10,10 +15,12 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
   let bsearch = document.getElementById('bsearch').value;
 
+  // if the field is empty, it'll send a post request with the string 'empty'.
   if (bsearch === '') {
     bsearch = 'empty';
   }
 
+  // POST request to getBookings.php
   const xhr = createRequest();
   if (xhr) {
     var obj = document.getElementById('response');

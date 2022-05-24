@@ -1,0 +1,15 @@
+CREATE TABLE test (
+id int AUTO_INCREMENT NOT NULL, 
+ref varchar(8) NOT NULL, 
+cname varchar(30) NOT NULL, 
+phone int(12) NOT NULL,
+unumber varchar(12), 
+snumber varchar(12) NOT NULL, 
+stname varchar(50) NOT NULL, 
+sbname varchar(50), 
+dsbname varchar(50), 
+date date NOT NULL, 
+time time NOT NULL, 
+status tinyint(1) NOT NULL, 
+PRIMARY KEY (id)
+);
